@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Joshua Johnson, DC — Chiropractic Physician in Chicago, IL</title>
+  <meta name="description" content="Dr. Joshua (Josh) Johnson.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Nav ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Dr. Joshua <span>Johnson</span>, DC</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== About ===== -->
+    <section id="about">
+      <div class="container reveal">
+        <!-- TODO: replace src with a real square headshot (e.g. src="profile.jpg") -->
+        <img class="profile-photo"
+             src="profile.JPG"
+             alt="Dr. Joshua Johnson">
+        <div class="about-intro">
+          <h1>Dr. Joshua (Josh) Johnson</h1>
+          <div class="title">Chiropractic Physician</div>
+        </div>
+        <p class="lead">
+          Dr. Joshua Johnson is a chiropractic physician with a strong foundation in
+          movement science, nutrition, and evidence-based care. At Aligned Modern
+          Health, he guides patients through functional recovery using spinal
+          adjustments, targeted rehabilitation, and therapeutic exercise—all grounded
+          in the belief that long-term strength and independence are key to lasting
+          relief.
+        </p>
+        <p class="lead">
+          Dr. Johnson's approach emphasizes education and empowerment, helping patients
+          understand their bodies, improve mobility, and know when to seek care. He is
+          trained in the McKenzie Method, DNS, and various soft tissue and adjusting
+          techniques, with a special interest in restoring movement patterns for
+          chronic pain and postural strain.
+        </p>
+        <p class="lead">
+          With academic distinction in both chiropractic and nutrition, Dr. Johnson
+          brings a whole-person perspective to musculoskeletal care, supporting
+          individuals who want to feel better, move better, and stay better.
+        </p>
+
+        <div class="detail-groups">
+          <div class="detail-group">
+            <h3 class="detail-heading">Specializations</h3>
+            <ul class="detail-list">
+              <li>Lower back pain</li>
+              <li>Individuals with chronic pain</li>
+              <li>McKenzie Method for spinal and joint pain</li>
+              <li>Functional rehabilitation and corrective exercise</li>
+              <li>Evidence-based treatment planning</li>
+              <li>Office workers and desk-bound professionals</li>
+            </ul>
+          </div>
+
+          <div class="detail-group">
+            <h3 class="detail-heading">Education &amp; Clinical Credentials</h3>
+            <ul class="detail-list">
+              <li>Doctor of Chiropractic, Palmer College of Chiropractic</li>
+              <li>B.S. in Biobehavioral Health and Nutritional Sciences, Schreyer Honors College at Penn State</li>
+              <li>Certified in McKenzie Method Part A and Thompson Technique</li>
+              <li>Training in DNS, Flexion-Distraction, and extremity adjusting techniques</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <div class="container reveal">
+        <div class="section-label">Contact</div>
+        <h2>Get in touch</h2>
+        <p class="lead">Reach out to schedule a visit or ask a question about care.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="kicker">Phone</div>
+            <a href="tel:+18152012740">815-201-2740</a>
+          </div>
+          <div class="contact-card">
+            <div class="kicker">Email</div>
+            <!-- TODO: replace with real email address -->
+            <a href="mailto:drjohnson@formandfunctionchicago.com">drjohnson@formandfunctionchicago.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="kicker">Office</div>
+            <!-- TODO: replace with real clinic address -->
+            <address>1512 N Fremont St., Suite 104<br>Chicago, IL 60642</address>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <!-- TODO: replace href with real booking/scheduling URL -->
+          <a class="btn btn-primary" href="https://formandfunctionchicago.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Dr. Joshua Johnson, DC</div>
+      <div><a href="tel:+18152012740">815-201-2740</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close the menu after tapping a link (mobile)
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scroll-reveal for sections
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
