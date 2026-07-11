@@ -82,7 +82,7 @@ a:hover { text-decoration: underline; }
 }
 .about-intro { margin-bottom: 22px; }
 .about-intro h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -120,7 +120,7 @@ a:hover { text-decoration: underline; }
 }
 .contact-info a { color: var(--ink); }
 .contact-info a:hover { color: var(--primary); }
-.contact-info .practice-name { font-weight: 700; }
+.contact-info .practice-name { font-weight: 700; color: var(--primary); }
 .ci {
   width: 0.9em;
   height: 0.9em;
@@ -142,7 +142,7 @@ a:hover { text-decoration: underline; }
   gap: 44px 48px;              /* row gap when stacked, column gap when side-by-side */
 }
 .detail-heading {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -204,7 +204,7 @@ footer a { color: #fff; }
     gap: 20px;
   }
   .profile-photo { width: 160px; height: 160px; align-self: center; }
-  .about-intro h1 { font-size: 1.75rem; }
+  .about-intro h1 { font-size: 1.3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
